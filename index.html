@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive galerija</title>
+    <style>
+        body{
+            padding:40px 30px 0;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 24px;
+        }
+        #grid div{
+            width: 100%;
+            height: 150px;
+            border-radius: 9px;
+            background:linear-gradient(rgb(152, 152, 231) 80%, white 80%);
+            box-shadow: 0 0 5px gray;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            font-size: 18px;
+        }
+       
+        #grid{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(144px, auto));
+            gap: 30px;
+            margin-bottom: 50px;
+        }  
+
+        p{
+            margin:0
+        }
+
+        /*OVAKO SAM UBACIO IKONICE*/
+
+        img{
+            width: 230px;
+            position: absolute;
+        }
+
+        /*OVAJ MEDIA QUERY SE ODNOSI NA EKRANE ŠIRINE OD 320px*/
+        @media screen and (max-width: 320px) {
+            #grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px; /* smanjujemo razmak između elemenata */
+            }
+
+            #grid div {
+                height: 120px; /* smanjujemo visinu elemenata */
+            }
+        }
+
+        /*OVAJ MEDIA QUERY SE ODNOSI NA EKRANE ŠIRINE OD 468px*/
+        @media screen and (min-width: 321px) and (max-width: 468px) {
+            #grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px; /* smanjujemo razmak između elemenata */
+            }
+
+            #grid div {
+                height: 120px; /* smanjujemo visinu elemenata */
+            }
+        }
+
+        /*OVAJ MEDIA QUERY SE ODNOSI NA EKRANE ŠIRINE OD 768px*/
+        @media screen and (min-width: 469px) and (max-width: 768px) {
+            #grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            #grid div {
+                height: 150px;
+            }
+        }
+
+        </style>
+</head>
+
+<body>
+    <h2>Gallery Heading</h2>
+        <div id="grid">
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+            <div><img src="placeholder-image.png" alt="icon"><p>Image Title</p></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</body>
+</html>
